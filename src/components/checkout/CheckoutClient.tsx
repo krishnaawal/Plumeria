@@ -125,7 +125,7 @@ export function CheckoutClient() {
       <div className="mx-auto max-w-7xl">
         <Link href="/#shop" className="text-sm font-bold text-leaf-700 hover:text-gold">Back to product</Link>
         <h1 className="mt-4 font-display text-4xl text-leaf-900 md:text-5xl">Fast Checkout</h1>
-        <p className="mt-2 text-leaf-700">Only four delivery details are needed to place your order.</p>
+        <p className="mt-2 text-leaf-700">Add your delivery details and any helpful note for the plant drop-off.</p>
 
         <form onSubmit={handleSubmit(onSubmit)} className="mt-7 grid gap-6 lg:grid-cols-[1fr_0.72fr]">
           <section className="subtle-card p-5 md:p-6">
@@ -135,7 +135,7 @@ export function CheckoutClient() {
                 <h2 className="font-display text-3xl text-leaf-900">Delivery Details</h2>
               </div>
               <span className="rounded-full bg-leaf-100 px-3 py-1 text-xs font-bold text-leaf-800">
-                4 quick fields
+                Fast order
               </span>
             </div>
             <div className="mt-5 grid gap-4">
@@ -149,6 +149,13 @@ export function CheckoutClient() {
                   className="field min-h-20"
                   placeholder="House number, street, area, city, nearby landmark"
                   {...register("fullLocation")}
+                />
+              </Field>
+              <Field label="Delivery notes (optional)" error={errors.orderNotes?.message}>
+                <textarea
+                  className="field min-h-20"
+                  placeholder="Example: call before delivery, leave near gate, preferred delivery time, or anything else"
+                  {...register("orderNotes")}
                 />
               </Field>
               <input tabIndex={-1} autoComplete="off" className="hidden" {...register("website")} />
