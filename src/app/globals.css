@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --leaf-dark: #18301c;
+  --leaf: #335a2f;
+  --sage: #dce9d3;
+  --cream: #f7efe1;
+  --petal: #fffaf1;
+  --gold: #b98b3f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(rgba(24, 48, 28, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 48, 28, 0.035) 1px, transparent 1px),
+    var(--petal);
+  background-size: 34px 34px;
+  color: var(--leaf-dark);
+}
+
+::selection {
+  background: var(--sage);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: var(--gold);
+}
+
+.botanical-bg {
+  background:
+    linear-gradient(115deg, rgba(255, 250, 241, 0.97) 0%, rgba(246, 248, 238, 0.94) 58%, rgba(220, 233, 211, 0.7) 100%),
+    repeating-linear-gradient(135deg, rgba(51, 90, 47, 0.08) 0 1px, transparent 1px 18px);
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.field {
+  @apply w-full rounded-lg border border-leaf-200 bg-white px-4 py-3 text-sm text-leaf-900 shadow-sm transition focus:border-gold focus:ring-2 focus:ring-gold/30;
+}
+
+.field-label {
+  @apply mb-2 block text-sm font-semibold text-leaf-900;
+}
+
+.field-error {
+  @apply mt-1 text-sm font-medium text-red-700;
+}
+
+.subtle-card {
+  @apply rounded-lg border border-leaf-100 bg-white/80 shadow-soft backdrop-blur;
+}
+
+.shop-paper {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 250, 241, 0.92)),
+    repeating-linear-gradient(0deg, rgba(24, 48, 28, 0.04) 0 1px, transparent 1px 14px);
+}
+
+.ink-border {
+  box-shadow:
+    0 0 0 1px rgba(24, 48, 28, 0.1),
+    10px 10px 0 rgba(51, 90, 47, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
